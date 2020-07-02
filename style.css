@@ -1,3 +1,6 @@
+body{
+    background: url("img/bg.jpg");
+}
 .field{
     width: 500px;
     height: 500px;

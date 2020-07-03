@@ -1,10 +1,11 @@
-body{
-    background: url("img/bg.jpg");
-}
+
 .field{
-    width: 500px;
+    width: 1200px;
     height: 500px;
     margin: auto;
+    display: flex;
+    justify-content: center;
+
 }
 .field img{
     margin-top: 100px;
@@ -14,19 +15,55 @@ body{
 
 .bat{
     transform: rotate(-20deg);
-    transition: transform 1.2s ease-in-out;
+    /* transition: transform 1.2s ease; */
+    
 }
-.bat:hover{
+.bat2{
+    transform: rotate(20deg);
+}
+/* .bat:hover{
     transform: rotate(10deg);
-}
+} */
 .flower{
     width: 50px !important;
     height: 50px !important;
     position: relative;
-    bottom: 200px;
+    /* bottom: 200px; */
     right: 130px;
     transition: transform 1.2s ease 1.2s;
 }
 .field:hover .flower{
-    transform: translate(500px, 100px) rotate(180deg);
+    animation: flowerMoving 1.5s ease 1s infinite alternate;
+}
+.field:hover .bat{
+    animation: playing 1.5s ease 1s infinite alternate ;
+}
+.field:hover .bat2{
+    animation: playing 1.5s ease 1s infinite alternate ;
+}
+@keyframes playing {
+    0%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    }
+}
+@keyframes playingRev {
+    0%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+}
+@keyframes flowerMoving {
+   0%{
+       bottom: 0;
+   }
+    
+    100% {
+        bottom: 10px;
+        transform: translate(250px, 30px) rotate(180deg);
+    }
 }
